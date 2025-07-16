@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Instant Resume Maker for the Essential Workforce | InstaResume</title>
+    <meta name="description" content="Stop stressing about resumes. Get a job-ready, professional resume in seconds. Our ready-made templates are designed for essential workers. Just tweak, download, and get hired." />
+    <meta name="keywords" content="resume maker, free resume builder, instant resume, retail resume, fast food resume, restaurant resume, hotel resume, warehouse resume, delivery driver resume, office assistant resume, construction resume, essential worker resume" />
+    <meta name="theme-color" content="#0a6bcb">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='%230a6bcb' fill-rule='evenodd' clip-rule='evenodd' d='M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z'></path></svg>">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --brand-primary: #0a6bcb;
+        --brand-secondary: #e7edf4;
+        --brand-text: #0d141c;
+        --brand-text-secondary: #49739c;
+      }
+
+      body {
+        font-family: "Space Grotesk", "Noto Sans", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Modal animation */
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 0.3s ease-out forwards;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['"Space Grotesk"', '"Noto Sans"', 'sans-serif'] },
+            colors: {
+              'brand-primary': '#0a6bcb',
+              'brand-secondary': '#e7edf4',
+              'brand-text': '#0d141c',
+              'brand-text-secondary': '#49739c',
+            },
+          }
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home-page">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-brand-secondary px-10 py-3">
+                <div class="flex items-center gap-4 text-brand-text">
+                    <div class="size-8 text-brand-primary">
+                         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor"></path></svg>
+                    </div>
+                    <h2 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em]">InstaResume</h2>
+                </div>
+                <div class="hidden md:flex flex-1 justify-end">
+                    <button id="home-start-button-1" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-brand-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Create My Resume</span>
+                    </button>
+                </div>
+            </header>
+            <main class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <div class="@container">
+                        <div class="@[480px]:p-4">
+                            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvU0EgdJefRrH3PIb_FApfKfyKHW4Nhqi5xR0II31MvAuwjb-vAvbIqTAe8GpfOLzSvxMuEBoPtux6ktxCsdVntn_0CwWSrEEFE4vVQxYBD1EB6pXDwi1zqFPN3U1zSl9-92Aby5hM2_GB2n9PYrBj7noVQ-f7iCaGZi7UYnLlXwz0nAB82adnq6Uma8aN7FEfNGuckxEUbjkCUTkKf64lo5Rld5KfoaTEeEVfGqKKo4v0R9MmShxXn0KzbvQldcUoGcy7AOkj1Hy3');">
+                                <div class="flex flex-col gap-2">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Free Instant Resume for Essential Workforces
+                                    </h1>
+                                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                        Don't have time to write a resume? We've done it for you. Pick a job, tweak our ready-made templates, and download your professional resume in seconds. It's that easy.
+                                    </h2>
+                                </div>
+                                <button id="home-start-button-2" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-brand-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                    <span class="truncate">Give Me Resume Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="text-brand-text text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 mt-10">How It Works</h2>
+                    <div class="flex flex-col gap-10 px-4 py-10 @container">
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-brand-text tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                Simple Steps to a Standout Resume
+                            </h1>
+                            <p class="text-brand-text text-base font-normal leading-normal max-w-[720px]">
+                                Our streamlined process makes resume creation quick and hassle-free. Follow these steps to build a resume that showcases your skills and experience.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
+                                <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M247.42,117l-14-35A15.93,15.93,0,0,0,218.58,72H184V64a8,8,0,0,0-8-8H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H41a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,247.42,117ZM184,88h34.58l9.6,24H184ZM24,72H168v64H24ZM72,208a16,16,0,1,1,16-16A16,16,0,0,1,72,208Zm81-24H103a32,32,0,0,0-62,0H24V152H168v12.31A32.11,32.11,0,0,0,153,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,184,208Zm48-24H215a32.06,32.06,0,0,0-31-24V128h48Z"></path></svg></div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-brand-text text-base font-bold leading-tight">Choose Your Job</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">Select your job from our diverse collection of professionally designed resume templates.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
+                                <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"></path></svg></div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-brand-text text-base font-bold leading-tight">Customize Your Resume</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">We've pre-filled a resume for you. Add your achievements or remove suggestions to make it perfectly yours.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
+                                <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"></path></svg></div>
+                                <div class="flex flex-col gap-1">
+                                    <h2 class="text-brand-text text-base font-bold leading-tight">Download Your Resume</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">Download your resume in various formats, ready to impress employers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="flex justify-center border-t border-solid border-t-brand-secondary">
+                <div class="flex max-w-[960px] flex-1 flex-col">
+                    <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+                        <p class="text-brand-text-secondary text-base font-normal leading-normal">©2024 InstaResume. All rights reserved.</p>
+                    </footer>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Builder Page -->
+    <div id="builder-page" class="hidden">
+         <div class="flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-brand-secondary px-10 py-3 sticky top-0 bg-slate-50 z-20">
+                <button id="go-home-button" class="flex items-center gap-4 text-brand-text">
+                    <div class="size-8 text-brand-primary">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor"></path></svg>
+                    </div>
+                    <h2 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em]">InstaResume</h2>
+                </button>
+            </header>
+
+            <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+                 <div class="w-full lg:grid lg:grid-cols-12 lg:gap-8">
+                    <!-- Form Section -->
+                    <div class="lg:col-span-5 xl:col-span-4 mb-8 lg:mb-0">
+                       <div class="w-full sticky top-24">
+                            <form id="resume-form" class="space-y-6">
+                                <!-- Personal Details -->
+                                <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
+                                    <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
+                                        <span class="ml-2">Personal Details</span>
+                                    </h2>
+                                    <div id="personal-details-content" class="space-y-4"></div>
+                                </div>
+                                
+                                <!-- Summary -->
+                                <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
+                                    <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path></svg>
+                                        <span class="ml-2">Professional Summary</span>
+                                    </h2>
+                                    <div class="space-y-4">
+                                        <textarea id="summary-input" placeholder="Select a job to see a pre-written summary here." rows="5" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Skills -->
+                                <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
+                                    <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.87-5.87m0 0L11.42 15.17m5.87-5.87L11.42 15.17M3 21l6.75-6.75m6.75-6.75L21 3m0 0h-4.5m4.5 0v4.5M3 3l6.75 6.75M3 3h4.5M3 3v4.5"></path></svg>
+                                        <span class="ml-2">Skills</span>
+                                    </h2>
+                                    <div class="space-y-4">
+                                        <textarea id="skills-input" placeholder="e.g., Customer Service, POS Systems, Teamwork" rows="3" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm"></textarea>
+                                        <p class="text-xs text-slate-500">Enter skills separated by commas.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Dynamic Sections -->
+                                <div id="dynamic-sections"></div>
+                            </form>
+                            <div class="mt-8">
+                                <button id="download-pdf-button" class="w-full flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256" class="w-6 h-6"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"></path></svg>
+                                    Download as PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Section -->
+                    <div class="lg:col-span-7 xl:col-span-8">
+                       <div class="bg-slate-200 p-4 sm:p-8 rounded-lg sticky top-24">
+                            <div id="resume-preview" class="w-full max-w-[210mm] min-h-[297mm] mx-auto bg-white p-8 sm:p-12 shadow-2xl font-sans text-brand-text">
+                                <header class="text-center mb-8">
+                                    <h1 id="preview-name" class="text-4xl font-bold text-slate-900">Your Name</h1>
+                                    <h2 id="preview-profession" class="text-lg font-medium text-brand-primary tracking-wide mt-1">Your Job Title</h2>
+                                    <div id="preview-contact" class="text-xs text-slate-600 mt-3 flex justify-center items-center flex-wrap gap-x-4 gap-y-1">
+                                    </div>
+                                </header>
+                                <main id="preview-main">
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Trait Modal -->
+    <div id="trait-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-lg shadow-xl p-6 sm:p-8 w-full max-w-2xl animate-fade-in-up">
+            <h2 class="text-2xl font-bold text-brand-text mb-2">Craft Your Resume</h2>
+            <p class="text-brand-text-secondary mb-6">Select exactly 3 qualities that best describe you. We'll build a resume that highlights these strengths.</p>
+            <div id="trait-modal-options" class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3 mb-8">
+                <!-- Traits will be injected here -->
+            </div>
+            <div class="flex justify-end gap-3">
+                <button id="trait-modal-cancel" class="px-5 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+                    Cancel
+                </button>
+                <button id="trait-modal-generate" disabled class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-primary hover:bg-opacity-90 rounded-lg transition-all disabled:bg-slate-400 disabled:cursor-not-allowed flex items-center justify-center min-w-[150px]">
+                    Generate Resume
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- CONSTANTS ---
+    const PROFESSIONS = [
+        { value: "", label: "The job you are applying for..." },
+        { value: "General Worker", label: "General / Other" },
+        { value: "Retail Associate", label: "Retail Associate / Cashier" },
+        { value: "Fast Food Crew", label: "Fast Food Crew Member" },
+        { value: "Restaurant Server", label: "Restaurant Server / Waitstaff" },
+        { value: "Hotel Front Desk", label: "Hotel Front Desk Agent" },
+        { value: "Housekeeper", label: "Housekeeper / Cleaner" },
+        { value: "Warehouse Associate", label: "Warehouse / Grocery Worker" },
+        { value: "Delivery Driver", label: "Rideshare / Delivery Driver" },
+        { value: "Office Assistant", label: "Office Assistant" },
+        { value: "General Laborer", label: "Landscaper / Construction Laborer" },
+    ];
+
+    const CHARACTER_TRAITS = ['Work ethic', 'Adaptability', 'Integrity', 'Communication', 'Teamwork', 'Problem-solving', 'Initiative', 'Resilience', 'Professionalism', 'Safety-Conscious', 'Customer Service', 'Efficiency', 'Physical Stamina', 'Following Instructions', 'Emotional Intelligence'];
+    
+    const TRAIT_BASED_CONTENT = {
+        'Work ethic':{summaryChunks:["A highly motivated individual with a strong work ethic, dedicated to performing tasks to the highest standard.","Brings a reputation for dedication and reliability, committed to achieving excellence in every task undertaken.","Demonstrates exceptional commitment and a hardworking attitude, consistently striving for top-quality results."],skills:['Punctual & Reliable','Time Management','Detail-Oriented','Hardworking','Productivity Improvement'],experienceBullets:['Consistently exceeded productivity targets by 15% through dedication and efficient work practices.','Maintained a perfect attendance and punctuality record over a two-year period, highlighting exceptional reliability.','Praised by management for meticulous attention to detail, resulting in a 20% reduction in errors.','Took on additional tasks during peak periods to support team goals and ensure project deadlines were met.','Demonstrated a commitment to quality by double-checking all work for accuracy before completion.','Recognized as "Employee of the Month" for outstanding performance and commitment to company values.','Arrived early for shifts to prepare workstation and plan daily tasks, improving overall readiness.','Known for maintaining a high level of productivity and focus, even during slow periods.','Volunteered to assist with inventory and stock management, contributing to a 10% reduction in discrepancies.','Consistently sought opportunities to learn new skills and contribute to different areas of the business.']},
+        'Adaptability':{summaryChunks:["An adaptable and quick-learning worker, able to thrive in dynamic environments and master new responsibilities with ease.","Quickly adjusts to new challenges and shifting priorities, demonstrating flexibility and a capacity for rapid learning.","A versatile team member who is comfortable with change and skilled at acquiring new skills as needed."],skills:['Fast Learner','Flexibility','Process Improvement','Dynamic Environments','Cross-Functional Skills'],experienceBullets:['Quickly mastered new equipment and procedures, reducing personal training time by 25%.','Successfully juggled multiple roles and responsibilities based on shifting team needs and priorities.','Adapted to a new inventory system seamlessly, helping train three other team members on its use.','Pivoted between front-end and back-end tasks as required to cover staff shortages.','Voluntarily learned new software which was then adopted by the team, increasing efficiency by 10%.','Thrived in a fast-paced environment with frequently changing priorities, demonstrating high flexibility.','Embraced new technology to streamline workflows and improve overall team performance.','Successfully onboarded and adapted to three different roles within the same organization.','Remained productive and positive during a major company-wide operational change.']},
+        'Integrity':{summaryChunks:["A trustworthy and responsible worker with unwavering integrity, committed to honest and ethical practices.","Known for being highly reliable and ethical, with a strong commitment to company policies and trust.","A dependable employee who can be counted on to act with honesty and maintain confidentiality."],skills:['Trustworthy & Honest','Cash Handling','Ethical Conduct','Company Policy Adherence','Confidentiality'],experienceBullets:['Entrusted with key-holding responsibilities for opening and closing procedures.','Handled over $2,000 in daily cash transactions with 100% accuracy and integrity.','Upheld all company policies and ethical standards consistently, serving as a role model for peers.','Managed sensitive customer information with complete confidentiality and care.','Reported a policy discrepancy that, once corrected, improved security for the entire team.','Trusted to handle confidential company documents and communications.','Consistently acted in the best interest of the company and its customers.','Garnered a reputation for being honest and transparent in all professional interactions.','Maintained composure and professionalism when handling sensitive situations.']},
+        'Communication':{summaryChunks:["An effective communicator with strong interpersonal skills, fostering clear and positive interactions.","Possesses excellent verbal and written communication skills, ensuring clarity and understanding with colleagues and supervisors.","A clear and concise communicator who excels at listening and conveying information accurately."],skills:['Clear Communication','Active Listening','Team Collaboration','Reporting','Interpersonal Skills'],experienceBullets:['Communicated clearly with team members to ensure smooth workflow and effective task coordination.','Provided regular, detailed updates to supervisors, ensuring transparency on project progress and challenges.','Relayed complex instructions and information accurately, preventing errors and misunderstandings.','Praised for ability to explain technical issues to non-technical team members.','Authored daily summary reports that were used by management for operational planning.','Actively listened to team feedback to improve processes and working relationships.','Presented information to small groups, ensuring all members were aligned and informed.','Wrote clear and concise emails and internal memos.','Facilitated productive discussions between team members to resolve work-related issues.']},
+        'Teamwork':{summaryChunks:["A collaborative team player who excels at supporting colleagues and contributing to a positive group dynamic.","Enjoys working as part of a team and is dedicated to achieving collective goals through cooperation.","A supportive and friendly team member, always willing to assist others to ensure group success."],skills:['Teamwork & Collaboration','Interpersonal Skills','Supportive','Conflict Resolution','Cooperative'],experienceBullets:['Actively supported teammates by sharing workloads during peak hours to meet collective goals.','Fostered a positive and cooperative work environment through a helpful and respectful attitude.','Collaborated with a diverse team of 10+ members to successfully complete large-scale projects on time.','Mediated a minor dispute between two colleagues, leading to a positive resolution and improved workflow.','Regularly shared knowledge and best practices with new hires to facilitate their integration into the team.','Celebrated team successes and provided encouragement during challenging periods.','Contributed to a team project that finished 10% ahead of schedule.','Voluntarily cross-trained in other roles to better support team members when needed.','Received peer-nominated award for being the most supportive team member.']},
+        'Problem-solving':{summaryChunks:["A resourceful problem-solver with a knack for identifying issues and implementing practical, effective solutions.","Possesses strong analytical skills, capable of troubleshooting problems and finding timely resolutions.","A proactive worker who anticipates potential issues and develops preventative measures."],skills:['Problem Solving','Critical Thinking','Troubleshooting','Resourcefulness','Analytical Skills'],experienceBullets:['Identified and resolved a recurring equipment malfunction, reducing machine downtime by 15%.','Developed a more efficient method for organizing supplies, saving an estimated 30 minutes of labor per day.','Proactively addressed potential safety hazards before they could become incidents, improving workplace safety.','Handled unexpected delivery shortages by coordinating with suppliers to find immediate replacements.','Used critical thinking to trace an order discrepancy, saving the company from a potential $500 loss.','Devised a temporary workaround during a system outage to maintain operational continuity.','Analyzed customer feedback to identify the root cause of a common complaint, leading to a service improvement.','Successfully troubleshot and resolved IT issues for colleagues, minimizing work disruptions.','Proposed a solution that reduced material waste by 5%.']},
+        'Initiative':{summaryChunks:["A proactive and self-motivated worker who consistently takes initiative to improve processes and exceed expectations.","A self-starter who can be relied upon to work independently and identify opportunities for improvement.","Demonstrates strong personal drive and the ability to see tasks through to completion without supervision."],skills:['Self-Motivated','Proactive','Process Improvement','Independent Work','Self-Starter'],experienceBullets:['Took initiative to organize the shared workspace, resulting in improved efficiency and a safer environment.','Volunteered for additional responsibilities during peak periods to provide crucial support to the team.','Independently completed tasks ahead of schedule with minimal supervision, demonstrating strong self-motivation.','Suggested a process change that was adopted and led to a 5% increase in team productivity.','Identified and learned a new software feature to automate a repetitive daily task.','Proactively created a "how-to" guide for a complex task to assist new team members.','Without being asked, developed a new tracking spreadsheet that was adopted by the entire department.','Started a team initiative to recycle office materials, reducing waste and costs.','Researched and proposed a new vendor that resulted in 10% cost savings.']},
+        'Emotional Intelligence':{summaryChunks:["An emotionally intelligent team member, skilled at navigating interpersonal dynamics and remaining calm under pressure.","Displays empathy and self-awareness, contributing to a respectful and understanding work environment.","Adept at managing stress and maintaining a positive attitude, which helps to boost team morale."],skills:['Emotional Intelligence','Empathy','Stress Management','Positive Attitude','Constructive Feedback'],experienceBullets:['Maintained a positive and professional demeanor during high-pressure situations, boosting team morale.','Effectively de-escalated a customer complaint with empathy, resulting in a positive outcome.','Received and applied constructive feedback gracefully to improve personal performance.','Recognized and supported a colleague struggling with a difficult task, helping them succeed.','Remained calm and focused during a system-wide outage, assisting in the recovery process.','Used active listening to understand the perspectives of others during team disagreements.','Demonstrated self-awareness by recognizing personal limitations and asking for help when needed.','Provided thoughtful and constructive feedback to peers in a respectful manner.','Successfully mediated a conflict between two coworkers, restoring a positive working relationship.']},
+        'Resilience':{summaryChunks:["A resilient and determined worker who maintains high performance and a positive outlook, even when faced with challenges.","Demonstrates the ability to bounce back from setbacks and adapt to adversity without compromising quality.","A persistent employee who stays focused on goals and maintains motivation during difficult projects."],skills:['Resilience','Persistence','Stress Tolerance','Positive Outlook','Adaptability'],experienceBullets:['Persisted through a challenging, long-term project, ensuring its successful completion despite unexpected obstacles.','Maintained high-quality work and a positive attitude during high-volume periods without sacrificing standards.','Bounced back quickly from a project setback, using it as a learning opportunity to improve future outcomes.','Successfully handled a sudden increase in workload after a team member\'s departure.','Completed all assigned tasks during a period of significant operational changes.','Stayed motivated and focused during repetitive tasks.','Received and acted on critical feedback without becoming discouraged.','Effectively managed stress during peak business seasons.','Helped maintain team morale during a period of uncertainty.']},
+        'Professionalism':{summaryChunks:["A consummate professional who upholds the highest standards of conduct, presentation, and respect in the workplace.","Maintains a professional demeanor at all times, representing the company positively to clients and colleagues.","Committed to workplace etiquette, punctuality, and creating a respectful and professional environment."],skills:['Professionalism','Customer Service','Workplace Etiquette','Brand Representation','Punctuality'],experienceBullets:['Maintained a professional appearance and attitude at all times, positively representing the company brand.','Interacted with all colleagues, supervisors, and customers with the utmost respect and courtesy.','Adhered strictly to the company\'s code of conduct and workplace etiquette.','Handled difficult customer interactions with poise and professionalism, preserving the company\'s reputation.','Consistently arrived on time for all shifts and meetings.','Kept workspace neat and organized to professional standards.','Responded to emails and calls promptly and professionally.','Respectfully disagreed with colleagues while maintaining a positive relationship.','Represented the company at a local event, receiving praise for professionalism.']},
+        'Safety-Conscious':{summaryChunks:["A highly safety-conscious individual with a commitment to maintaining a hazard-free work environment.","Prioritizes safety above all, with a strong understanding and adherence to all safety protocols.","A vigilant and responsible worker dedicated to ensuring the well-being of the entire team."],skills:['Safety Compliance','Hazard Identification','OSHA Standards','PPE Usage','Risk Assessment'],experienceBullets:['Maintained a personal record of zero safety incidents by strictly following all company protocols.','Identified and reported a potential trip hazard, which was immediately corrected, preventing potential injuries.','Actively participated in monthly safety meetings and contributed ideas for improving workplace safety.','Consistently and correctly used all required Personal Protective Equipment (PPE).','Assisted in conducting daily safety checks on equipment and work areas.','Completed all required safety training ahead of schedule.','Helped develop a new safety checklist for a high-risk task.','Stopped a potentially unsafe operation to re-evaluate procedures, preventing an accident.','Praised for being vigilant and promoting a culture of safety among peers.']},
+        'Customer Service':{summaryChunks:["A customer-focused professional dedicated to delivering a positive and helpful experience.","Possesses a friendly and patient demeanor, with a talent for understanding and meeting customer needs.","Committed to providing exceptional service that builds loyalty and ensures customer satisfaction."],skills:['Customer Satisfaction','Problem Resolution','Positive Attitude','Communication','Patience & Empathy'],experienceBullets:['Achieved a 95% customer satisfaction rating based on post-interaction surveys.','Resolved customer issues effectively, leading to a 10% increase in positive reviews.','Greeted every customer with a positive and welcoming attitude.','Patiently listened to customer needs to provide accurate and helpful solutions.','Received commendation for handling a difficult customer complaint with exceptional grace and professionalism.','Went above and beyond to meet a customer\'s needs, resulting in a letter of praise to management.','Remembered repeat customers and personalized their experience.','Followed up with customers to ensure their issues were resolved to their satisfaction.','Proactively identified customer needs and offered solutions before being asked.']},
+        'Efficiency':{summaryChunks:["An efficient and organized worker with a focus on streamlining processes and maximizing productivity.","Skilled at managing time effectively to complete tasks accurately and ahead of schedule.","Constantly seeks out ways to work smarter, reduce waste, and improve workflow."],skills:['Time Management','Process Optimization','Productivity','Organization','Resource Management'],experienceBullets:['Organized the supply closet which reduced time spent searching for materials by 15%.','Developed a checklist for a recurring task, reducing errors and ensuring consistency.','Completed daily assigned tasks 20% faster than the average, allowing time to assist colleagues.','Suggested a change in workflow that saved the team approximately 3 hours per week.','Managed multiple competing priorities effectively, meeting all deadlines.','Automated a repetitive data entry task, saving 5 hours of manual work per month.','Consistently found ways to reduce waste and optimize resource usage.','Prioritized tasks based on urgency and importance to maximize daily output.','Maintained an organized digital and physical workspace to quickly locate necessary information.']},
+        'Physical Stamina':{summaryChunks:["A physically fit and energetic worker capable of handling demanding tasks for extended periods.","Possesses the physical stamina required for labor-intensive roles, including lifting, standing, and moving.","A resilient and hardworking individual who maintains a high energy level throughout the workday."],skills:['Physical Fitness','Heavy Lifting (50+ lbs)','Manual Dexterity','Endurance','Active Work'],experienceBullets:['Comfortably lifted and moved objects weighing up to 50 lbs on a consistent basis.','Remained effective and energetic while standing and walking for 8-hour shifts.','Performed repetitive physical tasks with precision and without a decline in performance.','Met and exceeded all physical demands of the role in a fast-paced environment.','Contributed to projects requiring significant physical labor, such as loading and unloading shipments.','Maintained a high level of energy and productivity throughout physically demanding shifts.','Operated manual tools and equipment for extended periods.','Assisted in moving heavy equipment and materials safely and efficiently.','Worked outdoors in various weather conditions without a decrease in performance.']},
+        'Following Instructions':{summaryChunks:["A detail-oriented worker who excels at listening to and following instructions with precision.","A reliable employee who can be trusted to execute tasks exactly as directed.","Demonstrates a strong ability to comprehend and accurately carry out multi-step processes."],skills:['Attention to Detail','Following Directions','Accuracy','Active Listening','Process Adherence'],experienceBullets:['Followed complex, multi-step instructions accurately, resulting in zero errors on assigned projects.','Praised for being an excellent listener who requires minimal clarification on tasks.','Executed all duties in strict accordance with company standard operating procedures (SOPs).','Assembled components with 100% accuracy based on detailed schematics.','Successfully completed all training modules and scored perfectly on procedural assessments.','Consistently followed safety guidelines and protocols without deviation.','Took detailed notes during briefings to ensure all instructions were captured.','Asked clarifying questions to ensure full understanding before starting a task.','Completed checklists and quality assurance forms with precision.']}
+    };
+    const PROFESSION_TO_TRAITS = {'Retail Associate':['Customer Service','Communication','Teamwork','Efficiency','Integrity','Professionalism','Problem-solving'],'Fast Food Crew':['Teamwork','Efficiency','Customer Service','Following Instructions','Resilience','Safety-Conscious','Work ethic'],'Restaurant Server':['Customer Service','Communication','Teamwork','Resilience','Efficiency','Professionalism','Emotional Intelligence'],'Hotel Front Desk':['Customer Service','Communication','Problem-solving','Professionalism','Integrity','Emotional Intelligence','Adaptability'],'Housekeeper':['Work ethic','Following Instructions','Integrity','Efficiency','Resilience','Safety-Conscious','Initiative'],'Warehouse Associate':['Work ethic','Safety-Conscious','Following Instructions','Physical Stamina','Efficiency','Teamwork','Adaptability'],'Delivery Driver':['Safety-Conscious','Work ethic','Customer Service','Efficiency','Problem-solving','Integrity','Resilience'],'Office Assistant':['Communication','Integrity','Problem-solving','Professionalism','Initiative','Teamwork','Adaptability'],'General Laborer':['Physical Stamina','Work ethic','Safety-Conscious','Following Instructions','Teamwork','Resilience','Adaptability'],'General Worker':CHARACTER_TRAITS};
+    const DEFAULT_TEXTS = {'Retail Associate':{experience:{title:'Retail Associate'},education:{degree:'High School Diploma or GED'}},'Fast Food Crew':{experience:{title:'Crew Member'},education:{degree:'High School Diploma or GED'}},'Restaurant Server':{experience:{title:'Server'},education:{degree:'High School Diploma or GED'}},'Warehouse Associate':{experience:{title:'Warehouse Associate'},education:{degree:'High School Diploma or GED'},certification:{name:'Forklift Operator Certification',authority:'OSHA'}},'Hotel Front Desk':{experience:{title:'Front Desk Agent'},education:{degree:'High School Diploma or GED'}},'Housekeeper':{experience:{title:'Housekeeper'},education:{degree:'High School Diploma or GED'}},'Delivery Driver':{experience:{title:'Delivery Driver'},education:{degree:'High School Diploma or GED'}},'Office Assistant':{experience:{title:'Office Assistant'},education:{degree:'High School Diploma or GED'}},'General Worker':{experience:{title:'Team Member'},education:{degree:'High School Diploma or GED'}},'General Laborer':{experience:{title:'General Laborer'},education:{degree:'High School Diploma or GED'}}};
+    
+    // --- STATE ---
+    const initialResumeData = {
+        name: '', profession: '', email: '', phone: '', address: '',
+        summary: '', skills: '',
+        experiences: [], educations: [], certifications: [],
+    };
+    let resumeData = { ...initialResumeData };
+    let selectedTraits = [];
+    let selectedProfession = '';
+
+    // --- DOM ELEMENTS ---
+    const homePage = document.getElementById('home-page');
+    const builderPage = document.getElementById('builder-page');
+    const traitModal = document.getElementById('trait-modal');
+    
+    const personalDetailsContent = document.getElementById('personal-details-content');
+    const summaryInput = document.getElementById('summary-input');
+    const skillsInput = document.getElementById('skills-input');
+    const dynamicSectionsContainer = document.getElementById('dynamic-sections');
+
+    const previewName = document.getElementById('preview-name');
+    const previewProfession = document.getElementById('preview-profession');
+    const previewContact = document.getElementById('preview-contact');
+    const previewMain = document.getElementById('preview-main');
+    
+    const traitModalOptions = document.getElementById('trait-modal-options');
+    const traitModalGenerateBtn = document.getElementById('trait-modal-generate');
+
+    // --- HELPER FUNCTIONS ---
+    const uuidv4 = () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+
+    const switchView = (view) => {
+        if (view === 'builder') {
+            homePage.classList.add('hidden');
+            builderPage.classList.remove('hidden');
+        } else {
+            homePage.classList.remove('hidden');
+            builderPage.classList.add('hidden');
+        }
+        window.scrollTo(0, 0);
+    };
+
+    // --- RENDER / UPDATE FUNCTIONS ---
+    
+    const renderPersonalDetails = () => {
+        personalDetailsContent.innerHTML = `
+            <div class="relative">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
+                </div>
+                <input type="text" id="name-input" placeholder="Your Full Name" value="${resumeData.name}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+            </div>
+            <div class="flex items-center gap-2">
+                <select id="profession-select" class="w-full rounded-md border-slate-300 py-2 px-3 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+                    ${PROFESSIONS.map(p => `<option value="${p.value}" ${p.value === resumeData.profession ? 'selected' : ''}>${p.label}</option>`).join('')}
+                </select>
+                <button type="button" id="change-style-button" title="Change Writing Style" class="flex-shrink-0 flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-semibold text-brand-primary bg-sky-100 hover:bg-sky-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 11.667 0l3.181-3.183m-4.991-2.691v4.992m0 0h-4.992m4.992 0-3.181-3.183a8.25 8.25 0 0 0-11.667 0L2.985 16.644Z"></path></svg>
+                </button>
+            </div>
+            <div class="relative">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"></path></svg>
+                </div>
+                <input type="email" id="email-input" placeholder="Email Address" value="${resumeData.email}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+            </div>
+            <div class="relative">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3"></path></svg>
+                </div>
+                <input type="tel" id="phone-input" placeholder="Phone Number" value="${resumeData.phone}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+            </div>
+            <div class="relative">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path></svg>
+                </div>
+                <input type="text" id="address-input" placeholder="City, State" value="${resumeData.address}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+            </div>
+        `;
+        document.getElementById('change-style-button').disabled = !resumeData.profession;
+    };
+
+    const renderDynamicSections = () => {
+        const sections = [
+            {
+                key: 'experiences', title: 'Work Experience', single: 'Experience',
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.004a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75v-4.004M15.75 10.5h-7.5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.004a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75v-4.004m16.5 0a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25m16.5 0v-6A2.25 2.25 0 0 0 18 6H6a2.25 2.25 0 0 0-2.25 2.25v6m16.5 0a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25"></path></svg>`,
+                fields: [
+                    { name: 'title', placeholder: 'Job Title' },
+                    { name: 'company', placeholder: 'Company Name' },
+                    { name: 'location', placeholder: 'City, State' },
+                    { name: 'dates', placeholder: 'Dates (e.g., Jan 2020 - Present)' },
+                    { name: 'description', placeholder: 'Describe your responsibilities...', type: 'textarea' }
+                ]
+            },
+            {
+                key: 'educations', title: 'Education', single: 'Education',
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"></path></svg>`,
+                fields: [
+                    { name: 'degree', placeholder: 'Degree or Diploma' },
+                    { name: 'school', placeholder: 'School Name' },
+                    { name: 'location', placeholder: 'City, State' },
+                    { name: 'year', placeholder: 'Year of Completion' }
+                ]
+            },
+            {
+                key: 'certifications', title: 'Certifications', single: 'Certification',
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>`,
+                fields: [
+                    { name: 'name', placeholder: 'Certification Name' },
+                    { name: 'authority', placeholder: 'Issuing Organization' },
+                    { name: 'number', placeholder: 'Credential ID (Optional)' }
+                ]
+            }
+        ];
+
+        dynamicSectionsContainer.innerHTML = sections.map(section => `
+            <div class="bg-white p-5 rounded-lg shadow-sm" data-section-key="${section.key}">
+                <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
+                    ${section.icon}
+                    <span class="ml-2">${section.title}</span>
+                </h2>
+                <div class="space-y-4">
+                    ${resumeData[section.key].map(item => `
+                        <div key="${item.id}" class="p-4 border border-slate-200 rounded-lg relative bg-slate-50/50">
+                            <button type="button" data-remove-id="${item.id}" data-section="${section.key}" class="absolute top-2 right-2 p-1 text-slate-400 hover:text-red-600 hover:bg-red-100 rounded-full transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.134-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.067-2.09 1.02-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path></svg>
+                            </button>
+                            <div class="space-y-3">
+                                ${section.fields.map(field => field.type === 'textarea'
+                                    ? `<textarea data-id="${item.id}" name="${field.name}" placeholder="${field.placeholder}" rows="5" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">${item[field.name]}</textarea>`
+                                    : `<input type="text" data-id="${item.id}" name="${field.name}" placeholder="${field.placeholder}" value="${item[field.name]}" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">`
+                                ).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                     <button type="button" data-add-section="${section.key}" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-brand-primary bg-sky-50 hover:bg-sky-100 py-2 px-4 rounded-md transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path></svg>
+                        Add ${section.single}
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    const updatePreview = () => {
+        previewName.textContent = resumeData.name || "Your Name";
+        previewProfession.textContent = resumeData.profession ? PROFESSIONS.find(p => p.value === resumeData.profession).label : "Your Job Title";
+        
+        const contactInfo = [resumeData.email, resumeData.phone, resumeData.address].filter(Boolean);
+        previewContact.innerHTML = contactInfo.map(info => `<span>${info}</span>`).join(' • ');
+
+        let mainContent = '';
+
+        // Summary
+        if (resumeData.summary) {
+            mainContent += `<section class="mb-6"><h3 class="text-sm font-bold uppercase tracking-widest text-brand-primary mb-2 pb-1 border-b-2 border-slate-200">Professional Summary</h3><p class="text-sm leading-relaxed">${resumeData.summary.replace(/\n/g, '<br>')}</p></section>`;
+        }
+        // Skills
+        if (resumeData.skills) {
+            const skillsList = resumeData.skills.split(',').map(skill => skill.trim()).filter(Boolean).join('  •  ');
+            mainContent += `<section class="mb-6"><h3 class="text-sm font-bold uppercase tracking-widest text-brand-primary mb-2 pb-1 border-b-2 border-slate-200">Core Skills</h3><p class="text-sm leading-relaxed">${skillsList}</p></section>`;
+        }
+        // Experience
+        if (resumeData.experiences.length > 0 && resumeData.experiences[0].title) {
+            mainContent += `<section class="mb-6"><h3 class="text-sm font-bold uppercase tracking-widest text-brand-primary mb-2 pb-1 border-b-2 border-slate-200">Professional Experience</h3><div class="space-y-4">${resumeData.experiences.map(exp => exp.title ? `
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="text-base font-bold">${exp.title}</h4>
+                        <p class="text-xs text-slate-600">${exp.dates}</p>
+                    </div>
+                    <p class="text-sm italic text-slate-700">${exp.company}${exp.location ? `, ${exp.location}` : ''}</p>
+                    <ul class="list-disc list-outside pl-5 mt-1 space-y-1">
+                        ${exp.description.split('\n').filter(line => line.trim() !== '').map(line => `<li class="text-sm leading-relaxed">${line}</li>`).join('')}
+                    </ul>
+                </div>` : '').join('')}</div></section>`;
+        }
+        // Education
+        if (resumeData.educations.length > 0 && resumeData.educations[0].degree) {
+            mainContent += `<section class="mb-6"><h3 class="text-sm font-bold uppercase tracking-widest text-brand-primary mb-2 pb-1 border-b-2 border-slate-200">Education</h3><div class="space-y-3">${resumeData.educations.map(edu => edu.degree ? `
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="text-base font-bold">${edu.degree}</h4>
+                        <p class="text-xs text-slate-600">${edu.year}</p>
+                    </div>
+                    <p class="text-sm italic text-slate-700">${edu.school}${edu.location ? `, ${edu.location}` : ''}</p>
+                </div>` : '').join('')}</div></section>`;
+        }
+        // Certifications
+        if (resumeData.certifications.length > 0 && resumeData.certifications[0].name) {
+            mainContent += `<section class="mb-6"><h3 class="text-sm font-bold uppercase tracking-widest text-brand-primary mb-2 pb-1 border-b-2 border-slate-200">Certifications</h3><ul class="list-disc list-outside pl-5 space-y-1">${resumeData.certifications.map(cert => cert.name ? `
+                <li class="text-sm"><span class="font-bold">${cert.name}</span>${cert.authority ? `, ${cert.authority}` : ''}${cert.number ? ` (#${cert.number})` : ''}</li>` : '').join('')}</ul></section>`;
+        }
+
+        previewMain.innerHTML = mainContent;
+    };
+
+    // --- LOGIC FUNCTIONS ---
+    
+    const generateContentFromTraits = (traits) => {
+        if (traits.length !== 3) return null;
+
+        const summaryParts = traits.map(trait => {
+            const chunks = TRAIT_BASED_CONTENT[trait].summaryChunks;
+            return chunks[Math.floor(Math.random() * chunks.length)];
+        }).sort(() => 0.5 - Math.random());
+        const summary = summaryParts.join(' ');
+
+        const allSkills = traits.flatMap(trait => TRAIT_BASED_CONTENT[trait].skills);
+        const skills = [...new Set(allSkills)].join(', ');
+
+        const allBullets = traits.flatMap(trait => TRAIT_BASED_CONTENT[trait].experienceBullets);
+        const selectedBullets = allBullets.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const description = selectedBullets.join('\n');
+
+        return { summary, skills, description };
+    };
+
+    const handleGenerateFromTraits = () => {
+        const newContent = generateContentFromTraits(selectedTraits);
+        if (!newContent) return;
+
+        const { summary, skills, description } = newContent;
+        const defaults = DEFAULT_TEXTS[selectedProfession];
+
+        resumeData.summary = summary;
+        resumeData.skills = skills;
+        resumeData.experiences = [{
+            id: uuidv4(), title: defaults?.experience?.title || 'Team Member',
+            company: 'Previous Company', location: 'City, ST', dates: 'Jan 2020 - Present',
+            description: description, isDefault: true,
+        }];
+        resumeData.educations = [{
+            id: uuidv4(), degree: defaults?.education?.degree || 'High School Diploma or GED',
+            school: 'Local High School', location: 'City, ST', year: new Date().getFullYear() - 5 + '',
+        }];
+        resumeData.certifications = defaults?.certification ? [{
+            id: uuidv4(), name: defaults.certification.name, authority: defaults.certification.authority, number: ''
+        }] : [];
+        
+        // Update form fields with new data
+        summaryInput.value = resumeData.summary;
+        skillsInput.value = resumeData.skills;
+
+        renderDynamicSections();
+        updatePreview();
+        traitModal.classList.add('hidden');
+    };
+    
+    const handleChangeStyle = () => {
+        if (!resumeData.profession || selectedTraits.length !== 3) return;
+        const newContent = generateContentFromTraits(selectedTraits);
+        if (newContent) {
+            resumeData.summary = newContent.summary;
+            resumeData.experiences = resumeData.experiences.map(exp => exp.isDefault ? {...exp, description: newContent.description} : exp);
+            
+            summaryInput.value = resumeData.summary;
+            renderDynamicSections();
+            updatePreview();
+        }
+    };
+    
+    const generatePdf = () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+        const MARGIN = 40, PAGE_WIDTH = doc.internal.pageSize.getWidth(), USABLE_WIDTH = PAGE_WIDTH - (MARGIN * 2);
+        let y = MARGIN;
+        const checkPageBreak = (spaceNeeded) => {
+            if (y + spaceNeeded > doc.internal.pageSize.getHeight() - MARGIN) { doc.addPage(); y = MARGIN; }
+        };
+
+        const FONT = 'helvetica', PRIMARY_COLOR = '#0a6bcb', TEXT_COLOR_DARK = '#0d141c', TEXT_COLOR_MEDIUM = '#49739c', TEXT_COLOR_LIGHT = '#64748b', BORDER_COLOR = '#e2e8f0';
+
+        doc.setFont(FONT, 'bold').setFontSize(26).setTextColor(TEXT_COLOR_DARK);
+        doc.text(resumeData.name || 'Your Name', PAGE_WIDTH / 2, y, { align: 'center' });
+        y += 22;
+        doc.setFont(FONT, 'bold').setFontSize(12).setTextColor(PRIMARY_COLOR);
+        doc.text((PROFESSIONS.find(p=>p.value===resumeData.profession)?.label || 'Your Job Title').toUpperCase(), PAGE_WIDTH / 2, y, { align: 'center' });
+        y += 18;
+        const contactInfo = [resumeData.email, resumeData.phone, resumeData.address].filter(Boolean).join('  |  ');
+        doc.setFont(FONT, 'normal').setFontSize(9).setTextColor(TEXT_COLOR_MEDIUM);
+        doc.text(contactInfo, PAGE_WIDTH / 2, y, { align: 'center' });
+        y += 20;
+
+        const printSection = (title, contentGenerator, isVisible) => {
+            if (!isVisible) return;
+            checkPageBreak(40);
+            doc.setFont(FONT, 'bold').setFontSize(11).setTextColor(PRIMARY_COLOR);
+            doc.text(title.toUpperCase(), MARGIN, y);
+            y += 4;
+            doc.setDrawColor(BORDER_COLOR).setLineWidth(1).line(MARGIN, y, PAGE_WIDTH - MARGIN, y);
+            y += 15;
+            contentGenerator();
+            y += 20;
+        };
+        
+        printSection('Professional Summary', () => {
+            const textLines = doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).splitTextToSize(resumeData.summary, USABLE_WIDTH);
+            checkPageBreak(textLines.length * 12); doc.text(textLines, MARGIN, y); y += textLines.length * 12;
+        }, !!resumeData.summary);
+        
+        printSection('Core Skills', () => {
+            const skillsList = resumeData.skills.split(',').map(s => s.trim()).filter(Boolean).join('  •  ');
+            const textLines = doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).splitTextToSize(skillsList, USABLE_WIDTH);
+            checkPageBreak(textLines.length * 12); doc.text(textLines, MARGIN, y); y += textLines.length * 12;
+        }, !!resumeData.skills);
+
+        printSection('Professional Experience', () => resumeData.experiences.forEach((exp, i) => {
+            if (!exp.title) return; if (i > 0) y += 10; checkPageBreak(60);
+            doc.setFont(FONT, 'bold').setFontSize(11).setTextColor(TEXT_COLOR_DARK).text(exp.title, MARGIN, y);
+            doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_LIGHT).text(exp.dates, PAGE_WIDTH - MARGIN, y, { align: 'right' }); y += 14;
+            doc.setFont(FONT, 'italic').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).text(`${exp.company}${exp.location ? ` | ${exp.location}` : ''}`, MARGIN, y); y += 16;
+            if (exp.description) exp.description.split('\n').filter(l => l.trim()).forEach(l => {
+                const lines = doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).splitTextToSize(`• ${l.trim()}`, USABLE_WIDTH - 15);
+                checkPageBreak(lines.length * 12 + 2); doc.text(lines, MARGIN + 10, y); y += lines.length * 12 + 2;
+            });
+        }), resumeData.experiences.length > 0 && !!resumeData.experiences[0].title);
+
+        printSection('Education', () => resumeData.educations.forEach((edu, i) => {
+            if (!edu.degree) return; if (i > 0) y += 10; checkPageBreak(30);
+            doc.setFont(FONT, 'bold').setFontSize(11).setTextColor(TEXT_COLOR_DARK).text(edu.degree, MARGIN, y);
+            doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_LIGHT).text(edu.year, PAGE_WIDTH - MARGIN, y, { align: 'right' }); y += 14;
+            doc.setFont(FONT, 'italic').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).text(`${edu.school}${edu.location ? ` | ${edu.location}` : ''}`, MARGIN, y);
+        }), resumeData.educations.length > 0 && !!resumeData.educations[0].degree);
+        
+        printSection('Certifications', () => resumeData.certifications.forEach((cert, i) => {
+            if (!cert.name) return; if(i > 0) y+=5; checkPageBreak(15);
+            const text = `• ${cert.name}${cert.authority ? `, ${cert.authority}` : ''}${cert.number ? ` (#${cert.number})` : ''}`;
+            const lines = doc.setFont(FONT, 'normal').setFontSize(10).setTextColor(TEXT_COLOR_MEDIUM).splitTextToSize(text, USABLE_WIDTH);
+            doc.text(lines, MARGIN, y); y += lines.length * 12 + 2;
+        }), resumeData.certifications.length > 0 && !!resumeData.certifications[0].name);
+
+        doc.save(`${(resumeData.name || 'resume').replace(/\s+/g, '_')}_Resume.pdf`);
+    };
+
+    // --- EVENT HANDLERS & INITIALIZATION ---
+
+    const handleFormInput = (e) => {
+        const { id, value } = e.target;
+        const field = id.replace('-input', '');
+        if (Object.prototype.hasOwnProperty.call(resumeData, field)) {
+            resumeData[field] = value;
+            updatePreview();
+        }
+    };
+    
+    const handleDynamicSectionInput = (e) => {
+        if (!e.target.matches('input, textarea')) return;
+        const { dataset, name, value } = e.target;
+        const sectionKey = e.target.closest('[data-section-key]').dataset.sectionKey;
+        const item = resumeData[sectionKey].find(i => i.id === dataset.id);
+        if (item) {
+            item[name] = value;
+            updatePreview();
+        }
+    };
+
+    const handleDynamicSectionClick = (e) => {
+        const addButton = e.target.closest('[data-add-section]');
+        const removeButton = e.target.closest('[data-remove-id]');
+
+        if (addButton) {
+            const section = addButton.dataset.addSection;
+            const newItem = { id: uuidv4() };
+            if (section === 'experiences') Object.assign(newItem, { title: '', company: '', location: '', dates: '', description: '' });
+            if (section === 'educations') Object.assign(newItem, { degree: '', school: '', location: '', year: '' });
+            if (section === 'certifications') Object.assign(newItem, { name: '', authority: '', number: '' });
+            resumeData[section].push(newItem);
+            renderDynamicSections();
+        }
+
+        if (removeButton) {
+            const { section, removeId } = removeButton.dataset;
+            resumeData[section] = resumeData[section].filter(item => item.id !== removeId);
+            renderDynamicSections();
+            updatePreview();
+        }
+    };
+
+    const handleProfessionChange = (e) => {
+        const profession = e.target.value;
+        selectedTraits = [];
+        
+        if (!profession) {
+            selectedProfession = '';
+            resumeData = { ...initialResumeData, name: resumeData.name, email: resumeData.email, phone: resumeData.phone, address: resumeData.address };
+            renderPersonalDetails();
+            renderDynamicSections();
+            summaryInput.value = '';
+            skillsInput.value = '';
+            updatePreview();
+            return;
+        }
+
+        selectedProfession = profession;
+        resumeData.profession = profession;
+        document.getElementById('change-style-button').disabled = false;
+
+        const traitsForProfession = PROFESSION_TO_TRAITS[profession] || [];
+        traitModalOptions.innerHTML = traitsForProfession.map(trait => `
+            <label class="flex items-center p-3 rounded-md border border-slate-200 cursor-pointer has-[:checked]:bg-sky-50 has-[:checked]:border-brand-primary transition-all">
+                <input type="checkbox" data-trait="${trait}" class="h-5 w-5 rounded border-slate-300 text-brand-primary focus:ring-brand-primary disabled:opacity-50">
+                <span class="ml-3 text-sm font-medium text-slate-700">${trait}</span>
+            </label>
+        `).join('');
+
+        traitModal.classList.remove('hidden');
+    };
+
+    const handleTraitSelection = (e) => {
+        if (e.target.type !== 'checkbox') return;
+        const trait = e.target.dataset.trait;
+        const isSelected = selectedTraits.includes(trait);
+        if (isSelected) {
+            selectedTraits = selectedTraits.filter(t => t !== trait);
+        } else if (selectedTraits.length < 3) {
+            selectedTraits.push(trait);
+        }
+
+        const checkboxes = traitModalOptions.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            cb.checked = selectedTraits.includes(cb.dataset.trait);
+            cb.disabled = !selectedTraits.includes(cb.dataset.trait) && selectedTraits.length >= 3;
+        });
+        
+        traitModalGenerateBtn.disabled = selectedTraits.length !== 3;
+    };
+    
+    // Initial Setup
+    renderPersonalDetails();
+    renderDynamicSections();
+    updatePreview();
+
+    // Attach Event Listeners
+    document.getElementById('home-start-button-1').addEventListener('click', () => switchView('builder'));
+    document.getElementById('home-start-button-2').addEventListener('click', () => switchView('builder'));
+    document.getElementById('go-home-button').addEventListener('click', () => switchView('home'));
+    document.getElementById('download-pdf-button').addEventListener('click', generatePdf);
+    
+    personalDetailsContent.addEventListener('input', handleFormInput);
+    personalDetailsContent.addEventListener('change', (e) => {
+        if(e.target.id === 'profession-select') handleProfessionChange(e);
+    });
+     personalDetailsContent.addEventListener('click', (e) => {
+        if(e.target.closest('#change-style-button')) handleChangeStyle();
+    });
+
+    summaryInput.addEventListener('input', handleFormInput);
+    skillsInput.addEventListener('input', handleFormInput);
+
+    dynamicSectionsContainer.addEventListener('input', handleDynamicSectionInput);
+    dynamicSectionsContainer.addEventListener('click', handleDynamicSectionClick);
+
+    traitModal.addEventListener('click', (e) => {
+        if (e.target.id === 'trait-modal-cancel' || e.target === traitModal) {
+            traitModal.classList.add('hidden');
+            resumeData.profession = '';
+            selectedProfession = '';
+            document.getElementById('profession-select').value = ''; // Reset dropdown visually
+            document.getElementById('change-style-button').disabled = true;
+        }
+        if (e.target.id === 'trait-modal-generate') handleGenerateFromTraits();
+    });
+    traitModalOptions.addEventListener('change', handleTraitSelection);
+    });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
