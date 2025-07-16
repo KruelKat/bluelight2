@@ -1,0 +1,10 @@
+{
+  "name": "blue-light-test-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild index.tsx --bundle --outfile=dist/index.js --minify"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}
