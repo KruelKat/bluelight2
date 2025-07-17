@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Instant Resume Maker for the Essential Workforce | InstaResume</title>
-    <meta name="description" content="Free instant resume builder for essential workers, laborers & blue-collar jobs. Create professional resumes in minutes. Download immediately!" />
+    <meta name="description" content="Stop stressing about resumes. Get a job-ready, professional resume in seconds. Our ready-made templates are designed for essential workers. Just tweak, download, and get hired." />
     <meta name="keywords" content="resume maker, free resume builder, instant resume, retail resume, fast food resume, restaurant resume, hotel resume, warehouse resume, delivery driver resume, office assistant resume, construction resume, essential worker resume" />
     <meta name="theme-color" content="#0a6bcb">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='%230a6bcb' fill-rule='evenodd' clip-rule='evenodd' d='M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z'></path></svg>">
@@ -21,6 +20,10 @@
         --brand-secondary: #e7edf4;
         --brand-text: #0d141c;
         --brand-text-secondary: #49739c;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -69,16 +72,17 @@
     <!-- Home Page -->
     <div id="home-page">
         <div class="layout-container flex h-full grow flex-col">
-            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-brand-secondary px-10 py-3">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-brand-secondary px-4 sm:px-10 py-3">
                 <div class="flex items-center gap-4 text-brand-text">
                     <div class="size-8 text-brand-primary">
                          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor"></path></svg>
                     </div>
                     <h2 class="text-brand-text text-lg font-bold leading-tight tracking-[-0.015em]">InstaResume</h2>
                 </div>
-                <div class="hidden md:flex flex-1 justify-end">
-                    <button id="home-start-button-1" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-brand-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                        <span class="truncate">Create My Resume</span>
+                <div class="flex flex-1 justify-end items-center gap-4">
+                    <button id="lang-toggle-button" class="text-sm font-semibold text-brand-text hover:opacity-80 transition-opacity" data-i18n-key="lang_toggle_es">Español</button>
+                    <button id="home-start-button-1" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-brand-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate" data-i18n-key="header_create_resume">Create My Resume</span>
                     </button>
                 </div>
             </header>
@@ -88,26 +92,27 @@
                         <div class="@[480px]:p-4">
                             <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvU0EgdJefRrH3PIb_FApfKfyKHW4Nhqi5xR0II31MvAuwjb-vAvbIqTAe8GpfOLzSvxMuEBoPtux6ktxCsdVntn_0CwWSrEEFE4vVQxYBD1EB6pXDwi1zqFPN3U1zSl9-92Aby5hM2_GB2n9PYrBj7noVQ-f7iCaGZi7UYnLlXwz0nAB82adnq6Uma8aN7FEfNGuckxEUbjkCUTkKf64lo5Rld5KfoaTEeEVfGqKKo4v0R9MmShxXn0KzbvQldcUoGcy7AOkj1Hy3');">
                                 <div class="flex flex-col gap-2">
-                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]" data-i18n-key="home_hero_title">
                                         Free Instant Resume for Essential Workforces
                                     </h1>
-                                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto" data-i18n-key="home_hero_subtitle">
                                         Don't have time to write a resume? We've done it for you. Pick a job, tweak our ready-made templates, and download your professional resume in seconds. It's that easy.
                                     </h2>
+                                    <p id="language-notice" class="text-white/90 text-sm font-normal leading-normal max-w-2xl mx-auto mt-2 hidden" data-i18n-key="home_hero_language_notice"></p>
                                 </div>
                                 <button id="home-start-button-2" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-brand-primary text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
-                                    <span class="truncate">Give Me Resume Now</span>
+                                    <span class="truncate" data-i18n-key="home_hero_button">Give Me Resume Now</span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <h2 class="text-brand-text text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 mt-10">How It Works</h2>
+                    <h2 class="text-brand-text text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 mt-10" data-i18n-key="home_howItWorks_title">How It Works</h2>
                     <div class="flex flex-col gap-10 px-4 py-10 @container">
                         <div class="flex flex-col gap-4">
-                            <h1 class="text-brand-text tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                            <h1 class="text-brand-text tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]" data-i18n-key="home_howItWorks_subtitle">
                                 Simple Steps to a Standout Resume
                             </h1>
-                            <p class="text-brand-text text-base font-normal leading-normal max-w-[720px]">
+                            <p class="text-brand-text text-base font-normal leading-normal max-w-[720px]" data-i18n-key="home_howItWorks_desc">
                                 Our streamlined process makes resume creation quick and hassle-free. Follow these steps to build a resume that showcases your skills and experience.
                             </p>
                         </div>
@@ -115,22 +120,22 @@
                             <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
                                 <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M247.42,117l-14-35A15.93,15.93,0,0,0,218.58,72H184V64a8,8,0,0,0-8-8H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H41a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,247.42,117ZM184,88h34.58l9.6,24H184ZM24,72H168v64H24ZM72,208a16,16,0,1,1,16-16A16,16,0,0,1,72,208Zm81-24H103a32,32,0,0,0-62,0H24V152H168v12.31A32.11,32.11,0,0,0,153,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,184,208Zm48-24H215a32.06,32.06,0,0,0-31-24V128h48Z"></path></svg></div>
                                 <div class="flex flex-col gap-1">
-                                    <h2 class="text-brand-text text-base font-bold leading-tight">Choose Your Job</h2>
-                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">Select your job from our diverse collection of professionally designed resume templates.</p>
+                                    <h2 class="text-brand-text text-base font-bold leading-tight" data-i18n-key="home_step1_title">Choose Your Job</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal" data-i18n-key="home_step1_desc">Select your job from our diverse collection of professionally designed resume templates.</p>
                                 </div>
                             </div>
                             <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
                                 <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"></path></svg></div>
                                 <div class="flex flex-col gap-1">
-                                    <h2 class="text-brand-text text-base font-bold leading-tight">Customize Your Resume</h2>
-                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">We've pre-filled a resume for you. Add your achievements or remove suggestions to make it perfectly yours.</p>
+                                    <h2 class="text-brand-text text-base font-bold leading-tight" data-i18n-key="home_step2_title">Customize Your Resume</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal" data-i18n-key="home_step2_desc">We've pre-filled a resume for you. Add your achievements or remove suggestions to make it perfectly yours.</p>
                                 </div>
                             </div>
                             <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-white p-4 flex-col">
                                 <div class="text-brand-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"></path></svg></div>
                                 <div class="flex flex-col gap-1">
-                                    <h2 class="text-brand-text text-base font-bold leading-tight">Download Your Resume</h2>
-                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal">Download your resume in various formats, ready to impress employers.</p>
+                                    <h2 class="text-brand-text text-base font-bold leading-tight" data-i18n-key="home_step3_title">Download Your Resume</h2>
+                                    <p class="text-brand-text-secondary text-sm font-normal leading-normal" data-i18n-key="home_step3_desc">Download your resume in various formats, ready to impress employers.</p>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +145,7 @@
             <footer class="flex justify-center border-t border-solid border-t-brand-secondary">
                 <div class="flex max-w-[960px] flex-1 flex-col">
                     <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-                        <p class="text-brand-text-secondary text-base font-normal leading-normal">©2024 InstaResume. All rights reserved.</p>
+                        <p class="text-brand-text-secondary text-base font-normal leading-normal" data-i18n-key="footer_copyright">©2024 InstaResume. All rights reserved.</p>
                     </footer>
                 </div>
             </footer>
@@ -169,7 +174,7 @@
                                 <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
                                     <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
-                                        <span class="ml-2">Personal Details</span>
+                                        <span class="ml-2" data-i18n-key="builder_personal_details_title">Personal Details</span>
                                     </h2>
                                     <div id="personal-details-content" class="space-y-4"></div>
                                 </div>
@@ -178,7 +183,7 @@
                                 <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
                                     <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path></svg>
-                                        <span class="ml-2">Professional Summary</span>
+                                        <span class="ml-2" data-i18n-key="builder_summary_title">Professional Summary</span>
                                     </h2>
                                     <div class="space-y-4">
                                         <textarea id="summary-input" placeholder="Select a job to see a pre-written summary here." rows="5" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm"></textarea>
@@ -189,11 +194,11 @@
                                 <div class="bg-white p-5 rounded-lg shadow-sm mb-6">
                                     <h2 class="flex items-center text-lg font-bold text-brand-text mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.87-5.87m0 0L11.42 15.17m5.87-5.87L11.42 15.17M3 21l6.75-6.75m6.75-6.75L21 3m0 0h-4.5m4.5 0v4.5M3 3l6.75 6.75M3 3h4.5M3 3v4.5"></path></svg>
-                                        <span class="ml-2">Skills</span>
+                                        <span class="ml-2" data-i18n-key="builder_skills_title">Skills</span>
                                     </h2>
                                     <div class="space-y-4">
                                         <textarea id="skills-input" placeholder="e.g., Customer Service, POS Systems, Teamwork" rows="3" class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm"></textarea>
-                                        <p class="text-xs text-slate-500">Enter skills separated by commas.</p>
+                                        <p class="text-xs text-slate-500" data-i18n-key="builder_skills_hint">Enter skills separated by commas.</p>
                                     </div>
                                 </div>
                                 
@@ -203,7 +208,7 @@
                             <div class="mt-8">
                                 <button id="download-pdf-button" class="w-full flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256" class="w-6 h-6"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"></path></svg>
-                                    Download as PDF
+                                    <span data-i18n-key="builder_download_button">Download as PDF</span>
                                 </button>
                             </div>
                         </div>
@@ -232,16 +237,16 @@
     <!-- Trait Modal -->
     <div id="trait-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-lg shadow-xl p-6 sm:p-8 w-full max-w-2xl animate-fade-in-up">
-            <h2 class="text-2xl font-bold text-brand-text mb-2">Craft Your Resume</h2>
-            <p class="text-brand-text-secondary mb-6">Select exactly 3 qualities that best describe you. We'll build a resume that highlights these strengths.</p>
+            <h2 class="text-2xl font-bold text-brand-text mb-2" data-i18n-key="modal_title">Craft Your Resume</h2>
+            <p class="text-brand-text-secondary mb-6" data-i18n-key="modal_subtitle">Select exactly 3 qualities that best describe you. We'll build a resume that highlights these strengths.</p>
             <div id="trait-modal-options" class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3 mb-8">
                 <!-- Traits will be injected here -->
             </div>
             <div class="flex justify-end gap-3">
-                <button id="trait-modal-cancel" class="px-5 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+                <button id="trait-modal-cancel" class="px-5 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors" data-i18n-key="modal_cancel_button">
                     Cancel
                 </button>
-                <button id="trait-modal-generate" disabled class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-primary hover:bg-opacity-90 rounded-lg transition-all disabled:bg-slate-400 disabled:cursor-not-allowed flex items-center justify-center min-w-[150px]">
+                <button id="trait-modal-generate" disabled class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-primary hover:bg-opacity-90 rounded-lg transition-all disabled:bg-slate-400 disabled:cursor-not-allowed flex items-center justify-center min-w-[150px]" data-i18n-key="modal_generate_button">
                     Generate Resume
                 </button>
             </div>
@@ -250,19 +255,154 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
 
+    // --- I18N & TRANSLATIONS ---
+    let currentLanguage = 'en';
+    const translations = {
+        en: {
+            lang_toggle_es: "Español",
+            header_create_resume: "Create My Resume",
+            home_hero_title: "Free Instant Resume for Essential Workforces",
+            home_hero_subtitle: "Don't have time to write a resume? We've done it for you. Pick a job, tweak our ready-made templates, and download your professional resume in seconds. It's that easy.",
+            home_hero_button: "Give Me Resume Now",
+            home_hero_language_notice: "",
+            home_howItWorks_title: "How It Works",
+            home_howItWorks_subtitle: "Simple Steps to a Standout Resume",
+            home_howItWorks_desc: "Our streamlined process makes resume creation quick and hassle-free. Follow these steps to build a resume that showcases your skills and experience.",
+            home_step1_title: "Choose Your Job",
+            home_step1_desc: "Select your job from our diverse collection of professionally designed resume templates.",
+            home_step2_title: "Customize Your Resume",
+            home_step2_desc: "We've pre-filled a resume for you. Add your achievements or remove suggestions to make it perfectly yours.",
+            home_step3_title: "Download Your Resume",
+            home_step3_desc: "Download your resume in various formats, ready to impress employers.",
+            footer_copyright: "©2024 InstaResume. All rights reserved.",
+            builder_personal_details_title: "Personal Details",
+            builder_summary_title: "Professional Summary",
+            builder_skills_title: "Skills",
+            builder_experience_title: "Work Experience",
+            builder_education_title: "Education",
+            builder_certification_title: "Certifications",
+            builder_add_experience: "Add Experience",
+            builder_add_education: "Add Education",
+            builder_add_certification: "Add Certification",
+            builder_download_button: "Download as PDF",
+            builder_skills_hint: "Enter skills separated by commas.",
+            builder_change_style_title: "Change Writing Style",
+            placeholder_name: "Your Full Name",
+            placeholder_email: "Email Address",
+            placeholder_phone: "Phone Number",
+            placeholder_address: "City, State",
+            placeholder_summary: "Select a job to see a pre-written summary here.",
+            placeholder_skills: "e.g., Customer Service, POS Systems, Teamwork",
+            placeholder_exp_title: "Job Title",
+            placeholder_exp_company: "Company Name",
+            placeholder_exp_location: "City, State",
+            placeholder_exp_dates: "Dates (e.g., Jan 2020 - Present)",
+            placeholder_exp_desc: "Describe your responsibilities...",
+            placeholder_edu_degree: "Degree or Diploma",
+            placeholder_edu_school: "School Name",
+            placeholder_edu_location: "City, State",
+            placeholder_edu_year: "Year of Completion",
+            placeholder_cert_name: "Certification Name",
+            placeholder_cert_authority: "Issuing Organization",
+            placeholder_cert_number: "Credential ID (Optional)",
+            modal_title: "Craft Your Resume",
+            modal_subtitle: "Select exactly 3 qualities that best describe you. We'll build a resume that highlights these strengths.",
+            modal_cancel_button: "Cancel",
+            modal_generate_button: "Generate Resume",
+            prof_placeholder: "The job you are applying for...",
+            prof_general_worker: "General / Other",
+            prof_retail_associate: "Retail Associate / Cashier",
+            prof_fast_food_crew: "Fast Food Crew Member",
+            prof_restaurant_server: "Restaurant Server / Waitstaff",
+            prof_hotel_front_desk: "Hotel Front Desk Agent",
+            prof_housekeeper: "Housekeeper / Cleaner",
+            prof_warehouse_associate: "Warehouse / Grocery Worker",
+            prof_delivery_driver: "Rideshare / Delivery Driver",
+            prof_office_assistant: "Office Assistant",
+            prof_general_laborer: "Landscaper / Construction Laborer",
+        },
+        es: {
+            lang_toggle_es: "English",
+            header_create_resume: "Crear Mi Currículum",
+            home_hero_title: "Currículum Instantáneo y Gratuito para Trabajadores Esenciales",
+            home_hero_subtitle: "¿No tienes tiempo para escribir un currículum? Lo hemos hecho por ti. Elige un trabajo, ajusta nuestras plantillas listas para usar y descarga tu currículum profesional en segundos. Así de fácil.",
+            home_hero_button: "Dame el Currículum Ahora",
+            home_hero_language_notice: "Nota: La aplicación está en español para guiarte, pero tu currículum se creará en inglés.",
+            home_howItWorks_title: "Cómo Funciona",
+            home_howItWorks_subtitle: "Pasos Sencillos para un Currículum Excepcional",
+            home_howItWorks_desc: "Nuestro proceso simplificado hace que la creación de currículums sea rápida y sin complicaciones. Sigue estos pasos para construir un currículum que destaque tus habilidades y experiencia.",
+            home_step1_title: "Elige tu Trabajo",
+            home_step1_desc: "Selecciona tu trabajo de nuestra diversa colección de plantillas de currículum diseñadas profesionalmente.",
+            home_step2_title: "Personaliza tu Currículum",
+            home_step2_desc: "Hemos pre-llenado un currículum para ti. Añade tus logros o elimina sugerencias para hacerlo perfectamente tuyo.",
+            home_step3_title: "Descarga tu Currículum",
+            home_step3_desc: "Descarga tu currículum en varios formatos, listo para impresionar a los empleadores.",
+            footer_copyright: "©2024 InstaResume. Todos los derechos reservados.",
+            builder_personal_details_title: "Detalles Personales",
+            builder_summary_title: "Resumen Profesional",
+            builder_skills_title: "Habilidades",
+            builder_experience_title: "Experiencia Laboral",
+            builder_education_title: "Educación",
+            builder_certification_title: "Certificaciones",
+            builder_add_experience: "Añadir Experiencia",
+            builder_add_education: "Añadir Educación",
+            builder_add_certification: "Añadir Certificación",
+            builder_download_button: "Descargar como PDF",
+            builder_skills_hint: "Introduce las habilidades separadas por comas.",
+            builder_change_style_title: "Cambiar Estilo de Escritura",
+            placeholder_name: "Tu Nombre Completo",
+            placeholder_email: "Correo Electrónico",
+            placeholder_phone: "Número de Teléfono",
+            placeholder_address: "Ciudad, Estado",
+            placeholder_summary: "Selecciona un trabajo para ver un resumen pre-escrito aquí.",
+            placeholder_skills: "Ej: Servicio al Cliente, Sistemas POS, Trabajo en Equipo",
+            placeholder_exp_title: "Puesto de Trabajo",
+            placeholder_exp_company: "Nombre de la Empresa",
+            placeholder_exp_location: "Ciudad, Estado",
+            placeholder_exp_dates: "Fechas (ej: Ene 2020 - Actualidad)",
+            placeholder_exp_desc: "Describe tus responsabilidades...",
+            placeholder_edu_degree: "Título o Diploma",
+            placeholder_edu_school: "Nombre de la Institución",
+            placeholder_edu_location: "Ciudad, Estado",
+            placeholder_edu_year: "Año de Finalización",
+            placeholder_cert_name: "Nombre de la Certificación",
+            placeholder_cert_authority: "Organización Emisora",
+            placeholder_cert_number: "ID de Credencial (Opcional)",
+            modal_title: "Crea tu Currículum",
+            modal_subtitle: "Selecciona exactamente 3 cualidades que mejor te describan. Construiremos un currículum que resalte estas fortalezas.",
+            modal_cancel_button: "Cancelar",
+            modal_generate_button: "Generar Currículum",
+            prof_placeholder: "El trabajo al que estás aplicando...",
+            prof_general_worker: "General / Otro",
+            prof_retail_associate: "Asociado de Ventas / Cajero",
+            prof_fast_food_crew: "Empleado de Comida Rápida",
+            prof_restaurant_server: "Mesero / Personal de Restaurante",
+            prof_hotel_front_desk: "Recepcionista de Hotel",
+            prof_housekeeper: "Ama de Llaves / Limpiador(a)",
+            prof_warehouse_associate: "Asociado de Almacén / Supermercado",
+            prof_delivery_driver: "Conductor de Viajes / Entregas",
+            prof_office_assistant: "Asistente de Oficina",
+            prof_general_laborer: "Paisajista / Obrero de Construcción",
+        }
+    };
+    const traitTranslations = {
+        en: {'Work ethic':'Work ethic','Adaptability':'Adaptability','Integrity':'Integrity','Communication':'Communication','Teamwork':'Teamwork','Problem-solving':'Problem-solving','Initiative':'Initiative','Resilience':'Resilience','Professionalism':'Professionalism','Safety-Conscious':'Safety-Conscious','Customer Service':'Customer Service','Efficiency':'Efficiency','Physical Stamina':'Physical Stamina','Following Instructions':'Following Instructions','Emotional Intelligence':'Emotional Intelligence'},
+        es: {'Work ethic':'Ética Laboral','Adaptability':'Adaptabilidad','Integrity':'Integridad','Communication':'Comunicación','Teamwork':'Trabajo en Equipo','Problem-solving':'Resolución de Problemas','Initiative':'Iniciativa','Resilience':'Resiliencia','Professionalism':'Profesionalismo','Safety-Conscious':'Conciencia de Seguridad','Customer Service':'Servicio al Cliente','Efficiency':'Eficiencia','Physical Stamina':'Resistencia Física','Following Instructions':'Seguir Instrucciones','Emotional Intelligence':'Inteligencia Emocional'},
+    };
+
     // --- CONSTANTS ---
     const PROFESSIONS = [
-        { value: "", label: "The job you are applying for..." },
-        { value: "General Worker", label: "General / Other" },
-        { value: "Retail Associate", label: "Retail Associate / Cashier" },
-        { value: "Fast Food Crew", label: "Fast Food Crew Member" },
-        { value: "Restaurant Server", label: "Restaurant Server / Waitstaff" },
-        { value: "Hotel Front Desk", label: "Hotel Front Desk Agent" },
-        { value: "Housekeeper", label: "Housekeeper / Cleaner" },
-        { value: "Warehouse Associate", label: "Warehouse / Grocery Worker" },
-        { value: "Delivery Driver", label: "Rideshare / Delivery Driver" },
-        { value: "Office Assistant", label: "Office Assistant" },
-        { value: "General Laborer", label: "Landscaper / Construction Laborer" },
+        { value: "", i18nKey: "prof_placeholder" },
+        { value: "General Worker", i18nKey: "prof_general_worker" },
+        { value: "Retail Associate", i18nKey: "prof_retail_associate" },
+        { value: "Fast Food Crew", i18nKey: "prof_fast_food_crew" },
+        { value: "Restaurant Server", i18nKey: "prof_restaurant_server" },
+        { value: "Hotel Front Desk", i18nKey: "prof_hotel_front_desk" },
+        { value: "Housekeeper", i18nKey: "prof_housekeeper" },
+        { value: "Warehouse Associate", i18nKey: "prof_warehouse_associate" },
+        { value: "Delivery Driver", i18nKey: "prof_delivery_driver" },
+        { value: "Office Assistant", i18nKey: "prof_office_assistant" },
+        { value: "General Laborer", i18nKey: "prof_general_laborer" },
     ];
 
     const CHARACTER_TRAITS = ['Work ethic', 'Adaptability', 'Integrity', 'Communication', 'Teamwork', 'Problem-solving', 'Initiative', 'Resilience', 'Professionalism', 'Safety-Conscious', 'Customer Service', 'Efficiency', 'Physical Stamina', 'Following Instructions', 'Emotional Intelligence'];
@@ -332,21 +472,62 @@
         window.scrollTo(0, 0);
     };
 
+    const updateUIForLanguage = () => {
+        const t = translations[currentLanguage];
+        document.querySelectorAll('[data-i18n-key]').forEach(el => {
+            const key = el.dataset.i18nKey;
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
+        });
+
+        // Handle language-specific element visibility
+        const langNotice = document.getElementById('language-notice');
+        if (langNotice) {
+            if (currentLanguage === 'es') {
+                langNotice.classList.remove('hidden');
+            } else {
+                langNotice.classList.add('hidden');
+            }
+        }
+
+        // Re-render dynamic parts if they exist
+        if (document.body.contains(personalDetailsContent)) {
+            renderPersonalDetails();
+        }
+        if (document.body.contains(dynamicSectionsContainer)) {
+             renderDynamicSections();
+        }
+
+        // Update placeholders separately
+        const summary = document.getElementById('summary-input');
+        const skills = document.getElementById('skills-input');
+        if(summary) summary.placeholder = t.placeholder_summary;
+        if(skills) skills.placeholder = t.placeholder_skills;
+    };
+    
+    const setLanguage = (lang) => {
+        currentLanguage = lang;
+        document.documentElement.lang = lang;
+        updateUIForLanguage();
+    };
+
     // --- RENDER / UPDATE FUNCTIONS ---
     
     const renderPersonalDetails = () => {
+        const t = translations[currentLanguage];
         personalDetailsContent.innerHTML = `
             <div class="relative">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
                 </div>
-                <input type="text" id="name-input" placeholder="Your Full Name" value="${resumeData.name}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+                <input type="text" id="name-input" placeholder="${t.placeholder_name}" value="${resumeData.name}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
             </div>
             <div class="flex items-center gap-2">
                 <select id="profession-select" class="w-full rounded-md border-slate-300 py-2 px-3 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
-                    ${PROFESSIONS.map(p => `<option value="${p.value}" ${p.value === resumeData.profession ? 'selected' : ''}>${p.label}</option>`).join('')}
+                    ${PROFESSIONS.map(p => `<option value="${p.value}" ${p.value === resumeData.profession ? 'selected' : ''}>${t[p.i18nKey]}</option>`).join('')}
                 </select>
-                <button type="button" id="change-style-button" title="Change Writing Style" class="flex-shrink-0 flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-semibold text-brand-primary bg-sky-100 hover:bg-sky-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed transition-all">
+                <button type="button" id="change-style-button" title="${t.builder_change_style_title}" class="flex-shrink-0 flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-semibold text-brand-primary bg-sky-100 hover:bg-sky-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 11.667 0l3.181-3.183m-4.991-2.691v4.992m0 0h-4.992m4.992 0-3.181-3.183a8.25 8.25 0 0 0-11.667 0L2.985 16.644Z"></path></svg>
                 </button>
             </div>
@@ -354,54 +535,55 @@
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"></path></svg>
                 </div>
-                <input type="email" id="email-input" placeholder="Email Address" value="${resumeData.email}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+                <input type="email" id="email-input" placeholder="${t.placeholder_email}" value="${resumeData.email}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
             </div>
             <div class="relative">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3"></path></svg>
                 </div>
-                <input type="tel" id="phone-input" placeholder="Phone Number" value="${resumeData.phone}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+                <input type="tel" id="phone-input" placeholder="${t.placeholder_phone}" value="${resumeData.phone}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
             </div>
             <div class="relative">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path></svg>
                 </div>
-                <input type="text" id="address-input" placeholder="City, State" value="${resumeData.address}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
+                <input type="text" id="address-input" placeholder="${t.placeholder_address}" value="${resumeData.address}" class="w-full rounded-md border-slate-300 py-2 pl-10 pr-4 shadow-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary sm:text-sm">
             </div>
         `;
         document.getElementById('change-style-button').disabled = !resumeData.profession;
     };
 
     const renderDynamicSections = () => {
+        const t = translations[currentLanguage];
         const sections = [
             {
-                key: 'experiences', title: 'Work Experience', single: 'Experience',
+                key: 'experiences', title: t.builder_experience_title, single: t.builder_add_experience,
                 icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.004a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75v-4.004M15.75 10.5h-7.5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.004a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75v-4.004m16.5 0a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25m16.5 0v-6A2.25 2.25 0 0 0 18 6H6a2.25 2.25 0 0 0-2.25 2.25v6m16.5 0a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25"></path></svg>`,
                 fields: [
-                    { name: 'title', placeholder: 'Job Title' },
-                    { name: 'company', placeholder: 'Company Name' },
-                    { name: 'location', placeholder: 'City, State' },
-                    { name: 'dates', placeholder: 'Dates (e.g., Jan 2020 - Present)' },
-                    { name: 'description', placeholder: 'Describe your responsibilities...', type: 'textarea' }
+                    { name: 'title', placeholder: t.placeholder_exp_title },
+                    { name: 'company', placeholder: t.placeholder_exp_company },
+                    { name: 'location', placeholder: t.placeholder_exp_location },
+                    { name: 'dates', placeholder: t.placeholder_exp_dates },
+                    { name: 'description', placeholder: t.placeholder_exp_desc, type: 'textarea' }
                 ]
             },
             {
-                key: 'educations', title: 'Education', single: 'Education',
+                key: 'educations', title: t.builder_education_title, single: t.builder_add_education,
                 icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"></path></svg>`,
                 fields: [
-                    { name: 'degree', placeholder: 'Degree or Diploma' },
-                    { name: 'school', placeholder: 'School Name' },
-                    { name: 'location', placeholder: 'City, State' },
-                    { name: 'year', placeholder: 'Year of Completion' }
+                    { name: 'degree', placeholder: t.placeholder_edu_degree },
+                    { name: 'school', placeholder: t.placeholder_edu_school },
+                    { name: 'location', placeholder: t.placeholder_edu_location },
+                    { name: 'year', placeholder: t.placeholder_edu_year }
                 ]
             },
             {
-                key: 'certifications', title: 'Certifications', single: 'Certification',
+                key: 'certifications', title: t.builder_certification_title, single: t.builder_add_certification,
                 icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-brand-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>`,
                 fields: [
-                    { name: 'name', placeholder: 'Certification Name' },
-                    { name: 'authority', placeholder: 'Issuing Organization' },
-                    { name: 'number', placeholder: 'Credential ID (Optional)' }
+                    { name: 'name', placeholder: t.placeholder_cert_name },
+                    { name: 'authority', placeholder: t.placeholder_cert_authority },
+                    { name: 'number', placeholder: t.placeholder_cert_number }
                 ]
             }
         ];
@@ -428,7 +610,7 @@
                     `).join('')}
                      <button type="button" data-add-section="${section.key}" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-brand-primary bg-sky-50 hover:bg-sky-100 py-2 px-4 rounded-md transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path></svg>
-                        Add ${section.single}
+                        ${section.single}
                     </button>
                 </div>
             </div>
@@ -437,7 +619,9 @@
     
     const updatePreview = () => {
         previewName.textContent = resumeData.name || "Your Name";
-        previewProfession.textContent = resumeData.profession ? PROFESSIONS.find(p => p.value === resumeData.profession).label : "Your Job Title";
+        const t = translations['en']; // Preview is always in English
+        const professionLabel = PROFESSIONS.find(p => p.value === resumeData.profession);
+        previewProfession.textContent = professionLabel ? t[professionLabel.i18nKey] : "Your Job Title";
         
         const contactInfo = [resumeData.email, resumeData.phone, resumeData.address].filter(Boolean);
         previewContact.innerHTML = contactInfo.map(info => `<span>${info}</span>`).join(' • ');
@@ -567,7 +751,9 @@
         doc.text(resumeData.name || 'Your Name', PAGE_WIDTH / 2, y, { align: 'center' });
         y += 22;
         doc.setFont(FONT, 'bold').setFontSize(12).setTextColor(PRIMARY_COLOR);
-        doc.text((PROFESSIONS.find(p=>p.value===resumeData.profession)?.label || 'Your Job Title').toUpperCase(), PAGE_WIDTH / 2, y, { align: 'center' });
+        const professionLabel = PROFESSIONS.find(p=>p.value===resumeData.profession);
+        const titleText = professionLabel ? translations['en'][professionLabel.i18nKey] : 'Your Job Title';
+        doc.text(titleText.toUpperCase(), PAGE_WIDTH / 2, y, { align: 'center' });
         y += 18;
         const contactInfo = [resumeData.email, resumeData.phone, resumeData.address].filter(Boolean).join('  |  ');
         doc.setFont(FONT, 'normal').setFontSize(9).setTextColor(TEXT_COLOR_MEDIUM);
@@ -692,7 +878,7 @@
         traitModalOptions.innerHTML = traitsForProfession.map(trait => `
             <label class="flex items-center p-3 rounded-md border border-slate-200 cursor-pointer has-[:checked]:bg-sky-50 has-[:checked]:border-brand-primary transition-all">
                 <input type="checkbox" data-trait="${trait}" class="h-5 w-5 rounded border-slate-300 text-brand-primary focus:ring-brand-primary disabled:opacity-50">
-                <span class="ml-3 text-sm font-medium text-slate-700">${trait}</span>
+                <span class="ml-3 text-sm font-medium text-slate-700">${traitTranslations[currentLanguage][trait]}</span>
             </label>
         `).join('');
 
@@ -722,12 +908,16 @@
     renderPersonalDetails();
     renderDynamicSections();
     updatePreview();
+    updateUIForLanguage();
 
     // Attach Event Listeners
     document.getElementById('home-start-button-1').addEventListener('click', () => switchView('builder'));
     document.getElementById('home-start-button-2').addEventListener('click', () => switchView('builder'));
     document.getElementById('go-home-button').addEventListener('click', () => switchView('home'));
     document.getElementById('download-pdf-button').addEventListener('click', generatePdf);
+    document.getElementById('lang-toggle-button').addEventListener('click', () => {
+        setLanguage(currentLanguage === 'en' ? 'es' : 'en');
+    });
     
     personalDetailsContent.addEventListener('input', handleFormInput);
     personalDetailsContent.addEventListener('change', (e) => {
